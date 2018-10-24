@@ -6,6 +6,7 @@ use PastelesIsaac;
 create table Usuario(
 id_usuario  integer not null auto_increment,
 nombre varchar(25) not null,
+
 apellidoP varchar(25) not null,
 apellidoM varchar(25),
 rol varchar(10) default 'Usuario',
