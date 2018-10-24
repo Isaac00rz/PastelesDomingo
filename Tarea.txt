@@ -1,0 +1,51 @@
+Arboles en prolog
+31/10/2018
+
+
+Pagina principal
+	Con link, para el curriculum de los integrantes del equipo
+	Elejir un tema que ofrezca un servicio o
+	Que tenga registro de usuarios, y coneccion a base de datos para formularios ABE
+	Que tenga buena presentacion
+	Que tenga otras tres paginas informativas
+	Acerca de.
+
+
+-----------------------------------------------------------------------------------------------------------
+Pasteleria [Isaac Al Cubo, We Are Isaac] 
+
+
+Usuarios
+	Usuario:	Comprar pasteles
+	Administrador:	Dar ABE de pasteles y usuarios
+
+Acerda de: 
+	Curriculums
+	Mision y vision de la empresa.
+
+
+
+Base de datos:
+	Nombre:Pasteles_Isaacs
+	Tablas:
+		Usuarios: id_usuario, nombre, correo, contraseña, rol, telefono, direccion
+		Pasteles: id_pastel, nombre, precio, costo, descripcion
+		Compras:  id_compra, fecha, id_usuario
+		Pasteles_compras: id_compra, id_pastel
+
+Interfaces:
+	Inicio de sesion
+	Menu usuarios
+	Menu administradores
+	Acerda de
+	Curriculums
+	Mision y vision
+	Formulario de alta usuarios
+	Formulario de baja/eliminacion usuarios
+	Formulario de alta pasteles
+	Formulario de baja/eliminacion pasteles
+	compra de pasteles
+
+Framwork:  			// A elejir
+	PrimeFaces                
+	showcases.bootfaces.net
