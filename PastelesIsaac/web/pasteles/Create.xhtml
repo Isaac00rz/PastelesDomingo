@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePastelesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePastelesLabel_idPastel}" for="idPastel" />
+                    <h:inputText id="idPastel" value="#{pastelesController.selected.idPastel}" title="#{bundle.CreatePastelesTitle_idPastel}" required="true" requiredMessage="#{bundle.CreatePastelesRequiredMessage_idPastel}"/>
+                    <h:outputLabel value="#{bundle.CreatePastelesLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{pastelesController.selected.nombre}" title="#{bundle.CreatePastelesTitle_nombre}" required="true" requiredMessage="#{bundle.CreatePastelesRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.CreatePastelesLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{pastelesController.selected.descripcion}" title="#{bundle.CreatePastelesTitle_descripcion}" />
+                    <h:outputLabel value="#{bundle.CreatePastelesLabel_precio}" for="precio" />
+                    <h:inputText id="precio" value="#{pastelesController.selected.precio}" title="#{bundle.CreatePastelesTitle_precio}" />
+                    <h:outputLabel value="#{bundle.CreatePastelesLabel_costo}" for="costo" />
+                    <h:inputText id="costo" value="#{pastelesController.selected.costo}" title="#{bundle.CreatePastelesTitle_costo}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{pastelesController.create}" value="#{bundle.CreatePastelesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{pastelesController.prepareList}" value="#{bundle.CreatePastelesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePastelesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

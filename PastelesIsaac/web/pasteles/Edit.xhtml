@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditPastelesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditPastelesLabel_idPastel}" for="idPastel" />
+                    <h:inputText id="idPastel" value="#{pastelesController.selected.idPastel}" title="#{bundle.EditPastelesTitle_idPastel}" required="true" requiredMessage="#{bundle.EditPastelesRequiredMessage_idPastel}"/>
+                    <h:outputLabel value="#{bundle.EditPastelesLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{pastelesController.selected.nombre}" title="#{bundle.EditPastelesTitle_nombre}" required="true" requiredMessage="#{bundle.EditPastelesRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.EditPastelesLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{pastelesController.selected.descripcion}" title="#{bundle.EditPastelesTitle_descripcion}" />
+                    <h:outputLabel value="#{bundle.EditPastelesLabel_precio}" for="precio" />
+                    <h:inputText id="precio" value="#{pastelesController.selected.precio}" title="#{bundle.EditPastelesTitle_precio}" />
+                    <h:outputLabel value="#{bundle.EditPastelesLabel_costo}" for="costo" />
+                    <h:inputText id="costo" value="#{pastelesController.selected.costo}" title="#{bundle.EditPastelesTitle_costo}" />
+                </h:panelGrid>
+                <h:commandLink action="#{pastelesController.update}" value="#{bundle.EditPastelesSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditPastelesViewLink}"/>
+                <br />
+                <h:commandLink action="#{pastelesController.prepareList}" value="#{bundle.EditPastelesShowAllLink}" immediate="true"/>
+                <br />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

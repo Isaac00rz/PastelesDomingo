@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPastelesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPastelesLabel_idPastel}"/>
+                    <h:outputText value="#{pastelesController.selected.idPastel}" title="#{bundle.ViewPastelesTitle_idPastel}"/>
+                    <h:outputText value="#{bundle.ViewPastelesLabel_nombre}"/>
+                    <h:outputText value="#{pastelesController.selected.nombre}" title="#{bundle.ViewPastelesTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewPastelesLabel_descripcion}"/>
+                    <h:outputText value="#{pastelesController.selected.descripcion}" title="#{bundle.ViewPastelesTitle_descripcion}"/>
+                    <h:outputText value="#{bundle.ViewPastelesLabel_precio}"/>
+                    <h:outputText value="#{pastelesController.selected.precio}" title="#{bundle.ViewPastelesTitle_precio}"/>
+                    <h:outputText value="#{bundle.ViewPastelesLabel_costo}"/>
+                    <h:outputText value="#{pastelesController.selected.costo}" title="#{bundle.ViewPastelesTitle_costo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{pastelesController.destroyAndView}" value="#{bundle.ViewPastelesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPastelesEditLink}"/>
+                <br />
+                <h:commandLink action="#{pastelesController.prepareList}" value="#{bundle.ViewPastelesShowAllLink}"/>
+
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
