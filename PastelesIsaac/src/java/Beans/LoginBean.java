@@ -45,11 +45,11 @@ public class LoginBean {
         datos = ConeccionBD.consultaCompleta("Select nombre,contraseña,rol from Usuario where nombre = '"+nombre+"' and contraseña = '"+clave+"'", 3);
         ConeccionBD.cerrarConexion();
         try{
-            if(datos[0].toString().equals(nombre)){
-                pagina = "index";
+            if(datos[2].toString().equals("Admin")){
+                pagina = "Administrador?faces-redirect=true&usuario="+nombre;
             }
         }catch(Exception e){
-            pagina = "welcomePrimefaces";
+            pagina = "Usuario";
         }      
         return pagina;
     }
