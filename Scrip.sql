@@ -6,14 +6,7 @@ use PastelesIsaac;
 create table Usuario(
 id_usuario  integer not null auto_increment,
 nombre varchar(25) not null,
-
-apellidoP varchar(25) not null,
-apellidoM varchar(25),
-rol varchar(10) default 'Usuario',
-email varchar(25),
-telefono varchar(10),
 contraseña varchar(30),
-direccion varchar(100),
 PRIMARY KEY (id_usuario)
 )
 ENGINE = InnoDB
